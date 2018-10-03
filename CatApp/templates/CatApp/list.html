@@ -1,0 +1,12 @@
+{% extends "CatApp/layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <h2>List of cat pictures!</h2>
+  <ul>
+  {% for picture in cat_list %}
+    <li>{{ picture }}</li>
+  {% endfor %}
+  </ul>
+{% endblock %}
