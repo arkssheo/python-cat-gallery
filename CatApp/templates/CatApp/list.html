@@ -4,9 +4,13 @@
 
 {% block content %}
   <h2>List of cat pictures!</h2>
+  {% if new_cat %}
+  <p>Successfull added: {{ new_cat }}!</p>
+  {% endif %}
   <ul>
-  {% for picture in cat_list %}
-    <li>{{ picture }}</li>
+  {% for cat in cat_list %}
+    <li>{{ cat }} - <a href="/delete_cat/{{ cat.id }}">delete</a></li>
   {% endfor %}
   </ul>
+  <a href="/new_cat/">Add a picture &gt;&gt;</a>
 {% endblock %}
